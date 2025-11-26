@@ -11,6 +11,10 @@ const pool = new Pool({
   password: process.env.PG_PASSWORD,
   database: process.env.PG_DATABASE,
   port: process.env.PG_PORT,
+  ssl: {
+    require: true,              // ✅ Force SSL for Neon
+    rejectUnauthorized: false,  // ✅ Allow self-signed certs
+  },
 });
 
 // ✅ Test connection
